@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "benchmark-estimate-admin-panel",
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
