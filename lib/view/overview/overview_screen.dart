@@ -42,26 +42,31 @@ class _OverviewState extends State<Overview> {
 
   @override
   Widget build(BuildContext context) {
+    print(MySize.screenWidth);
 
     return ReusableContainer(
-      width: 1200,
+      width: MySize.screenWidth > 1200 ? MySize.screenWidth * 0.8:  1200,
       bgColor: Colors.transparent,
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Row(
-              children: [
-                _buildInfoCard(context, 'Sales', '\$1200.00', '+12%', sales, AppTextStylesInter.label12500G),
-                SizedBox(width: MySize.size24),
-                _buildInfoCard(context, 'Total Revenue', '\$10566.00', '+35%', revenue, AppTextStylesInter.label12500G),
-                SizedBox(width: MySize.size24),
-                _buildInfoCard(context, 'Return', '\$950.00', '+12%', returns, AppTextStylesInter.label12500Pink),
-                SizedBox(width: MySize.size24),
-                _buildInfoCard(context, 'Completed', '\$5150.00', '+15%', marketing, AppTextStylesInter.label12500G),
-                SizedBox(width: MySize.size24),
-                _buildInfoCard(context, 'Running Orders', '\$5150.00', '+15%', marketing, AppTextStylesInter.label12500G),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  _buildInfoCard(context, 'Sales', '\$1200.00', '+12%', sales, AppTextStylesInter.label12500G),
+                  SizedBox(width: MySize.size24),
+                  _buildInfoCard(context, 'Total Revenue', '\$10566.00', '+35%', revenue, AppTextStylesInter.label12500G),
+                  SizedBox(width: MySize.size24),
+                  _buildInfoCard(context, 'Return', '\$950.00', '+12%', returns, AppTextStylesInter.label12500Pink),
+                  SizedBox(width: MySize.size24),
+                  _buildInfoCard(context, 'Completed', '\$5150.00', '+15%', marketing, AppTextStylesInter.label12500G),
+                  SizedBox(width: MySize.size24),
+                  _buildInfoCard(context, 'Running Orders', '\$5150.00', '+15%', marketing, AppTextStylesInter.label12500G),
 
-              ],
+                ],
+              ),
             ),
             Row(
               children: [
@@ -360,7 +365,7 @@ class _OverviewState extends State<Overview> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SvgPicture.asset(asset),
-          SizedBox(width: MySize.size16),
+          SizedBox(width: MySize.size14),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -372,7 +377,7 @@ class _OverviewState extends State<Overview> {
                   children: [
                     TextSpan(
                       text: amount,
-                      style: AppTextStylesInter.label18700B,
+                      style: AppTextStylesInter.label16600B,
                     ),
                     TextSpan(
                       text: percentage,
